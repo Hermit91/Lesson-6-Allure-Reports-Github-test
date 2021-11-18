@@ -11,7 +11,6 @@ public class GithubIssueStepLambdaTest extends TestBase {
 
     @Test
     public void positiveTest() {
-
         step("Find repository" + REPOSITORY, () -> {
             $(".header-search-input").click();
             $(".header-search-input").setValue(REPOSITORY)
@@ -26,12 +25,10 @@ public class GithubIssueStepLambdaTest extends TestBase {
         step("Check issue #" + ISSUE_NUMBER, () -> {
             $(".js-check-all-container").shouldHave(Condition.text("#" + ISSUE_NUMBER));
         });
-
     }
 
     @Test
     public void failedTest() {
-
         step("Find repository" + REPOSITORY, () -> {
             $(".header-search-input").click();
             $(".header-search-input").setValue(REPOSITORY)
@@ -46,12 +43,10 @@ public class GithubIssueStepLambdaTest extends TestBase {
         step("Check issue #" + 86, () -> {
             $(".js-check-all-container").shouldHave(Condition.text("#" + 86));
         });
-
     }
 
     @Test
     public void brokenTest() {
-
         step("Find repository" + REPOSITORY, () -> {
             $(".header-search-input").click();
             $(".header-search-input").setValue(REPOSITORY)
@@ -70,6 +65,5 @@ public class GithubIssueStepLambdaTest extends TestBase {
         step("Check issue #" + ISSUE_NUMBER, () -> {
             $(".js-check-all-container").shouldHave(Condition.text("#" + ISSUE_NUMBER));
         });
-
     }
 }

@@ -9,35 +9,29 @@ public class GithubIssueAnnotatedWithScreenshotTest extends TestBase {
 
     @Test
     public void positiveTest() {
-
         steps.searchForRepository(REPOSITORY);
         steps.goToRepository(REPOSITORY);
         steps.openIssueTab();
         steps.shouldSeeIssueNumber(68);
         steps.takeScreenshot();
-
     }
 
     @Test
     public void failedTest() {
-
         steps.searchForRepository(REPOSITORY);
         steps.goToRepository(REPOSITORY);
         steps.openIssueTab();
         steps.shouldSeeIssueNumber(86);
         steps.takeScreenshot();
-
     }
 
     @Test
     public void brokenTest() {
-
         steps.searchForRepository(REPOSITORY);
         steps.dontGoToRepository("eroshenkoam");
         steps.openIssueTab();
         steps.shouldSeeIssueNumber(68);
         steps.takeScreenshot();
-
     }
 }
 

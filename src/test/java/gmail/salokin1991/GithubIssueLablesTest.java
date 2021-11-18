@@ -18,7 +18,6 @@ public class GithubIssueLablesTest extends TestBase {
     @Feature("Check value")
     @Story("Check Issue value")
     public void positiveTest() {
-
         $(".header-search-input").click();
         $(".header-search-input").setValue("eroshenkoam/allure-example").pressEnter();
 
@@ -26,7 +25,6 @@ public class GithubIssueLablesTest extends TestBase {
         $("#issues-repo-tab-count").click();
 
         $(".js-check-all-container").shouldHave(Condition.text("#68"));
-
     }
 
     @Test
@@ -37,7 +35,6 @@ public class GithubIssueLablesTest extends TestBase {
     @Feature("Check wrong value")
     @Story("Check wrong Issue value")
     public void failedTest() {
-
         $(".header-search-input").click();
         $(".header-search-input").setValue("eroshenkoam/allure-example").pressEnter();
 
@@ -45,12 +42,10 @@ public class GithubIssueLablesTest extends TestBase {
         $("#issues-repo-tab-count").click();
 
         $(".js-check-all-container").shouldHave(Condition.text("#86"));
-
     }
 
     @Test
     public void brokenTest() {
-
         Allure.getLifecycle().updateTestCase(testCase -> {
             testCase.setName("Broken test");
             Allure.label("owner", "dsalokin");
@@ -72,6 +67,5 @@ public class GithubIssueLablesTest extends TestBase {
         $("#issues-repo-tab-count").click();
 
         $(".js-check-all-container").shouldHave(Condition.text("#68"));
-
     }
 }

@@ -12,9 +12,7 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-
         Configuration.startMaximized = true;
         open("https://github.com/");
-
     }
 }

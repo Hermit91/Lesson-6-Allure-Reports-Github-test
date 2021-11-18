@@ -31,7 +31,8 @@ public class WebSteps {
             $(By.partialLinkText(repository)).wait();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }    }
+        }
+    }
 
     @Step("Open Issue tab")
     public void openIssueTab() {
@@ -49,5 +50,4 @@ public class WebSteps {
         final WebDriver driver = WebDriverRunner.getWebDriver();
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
-
 }
